@@ -13,11 +13,10 @@ export function ListItems({ item, onClick }: Props) {
     onClick(!isChecked, item.id);
   };
   return (
-    <C.Container done={isChecked}>
+    <C.Container done={item.done}>
       <input
         type="checkbox"
-        checked={isChecked}
-        onChange={(e) => setIsChecked(e.target.checked)}
+        checked={item.done}
         onClick={updateStatusTask}
       />
       <label>{item.name}</label>
